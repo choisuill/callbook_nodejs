@@ -4,10 +4,10 @@ var ejs = require('ejs');
 var bodyparser = require('body-parser');
 var app = express();
 
-mongoose.set('useNewUrlParser', true);    // 1
-mongoose.set('useFindAndModify', false);  // 1
-mongoose.set('useCreateIndex', true);     // 1
-mongoose.set('useUnifiedTopology', true); // 1
+mongoose.set('useNewUrlParser', true);    // mongoose setting
+mongoose.set('useFindAndModify', false);  // mongoose setting
+mongoose.set('useCreateIndex', true);     // mongoose setting
+mongoose.set('useUnifiedTopology', true); // mongoose setting
 mongoose.connect(process.env.MONGO_DB);
 var db = mongoose.connection;
 db.once('open',function(){
@@ -16,10 +16,10 @@ db.once('open',function(){
 db.on('error',function(err){
   console.log(err);
 });
-app.use(express.static(__dirname + '/public'));
-app.set('view engine','ejs');
-app.use(bodyparser.json());
-app.use(bodyparser.urlencoded({extended:true}));
+app.use(express.static(__dirname + '/public'));   //css setting
+app.set('view engine','ejs');                     //ejs setting
+app.use(bodyparser.json());                       //bodyparser setting
+app.use(bodyparser.urlencoded({extended:true}));  //bodyparser setting
 
 var callbookSchema = mongoose.Schema({
   name: {type:String,unicode:true,required:true},
@@ -27,8 +27,9 @@ var callbookSchema = mongoose.Schema({
   address:{type:String},
   age:{type:String}
 });
+// Skchema setting
 var Callbook = mongoose.model('callbook',callbookSchema);
-
+// Callbook model Create
 app.get('/',function(req,res){
   Callbook.find({},function(err,callbooks){
     if(err) return res.json(err);
@@ -52,6 +53,7 @@ app.post('/create',function(req,res){
   });
 });
 
+//port create
 var port = 3001;
 app.listen(port,function(){
   console.log(port+'server is on!');
