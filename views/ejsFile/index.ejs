@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/master.css">
+</head>
+<body>
+  <h1>callbook</h1>
+    <p><a href="/ejsFile/create">go create</a></p>
+    <ul>
+      <% callbooks.forEach(function(callbook) { %>
+        <li>
+          <p><a href="/ejsFile/show/<%= callbook._id %> ">
+             Name : <%= callbook.name %></a></p>
+          <p>Phone number : <%= callbook.call %></p>
+        </li>
+    <%  }) %>
+    </ul>
+</body>
+</html>
