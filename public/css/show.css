@@ -1,0 +1,35 @@
+body{
+  background-color: #d6e0f0;
+  width: 100vw;
+  height: 100vh;
+}
+.main{
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  width: 50%;
+  background-color: #f1f6f9;
+  padding: 50px;
+  border-radius: 10px;
+}
+.goindex{
+  display: block;
+  text-align: right;
+}
+.bottom {
+  display: block;
+  text-align: center;
+}
+.bottom input{
+  font-size: 18px;
+}
+.bottom a{
+  display: inline-block;
+}
+.bottom input{
+  display: inline-block;
+}
+a{
+  text-decoration: none;
+  font-size: 20px;
+}

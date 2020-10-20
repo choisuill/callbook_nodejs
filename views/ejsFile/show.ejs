@@ -2,21 +2,22 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/css/master.css">
+    <link rel="stylesheet" href="/css/show.css">
     <title>Show Page</title>
   </head>
   <body>
-    <h1>show page</h1>
-    <a href="/">go index </a>
-    <h3>Name : <%= callbook.name %> </h3>
-    <p>Phone number : <%= callbook.call %> </p>
-    <p>Address : <%= callbook.address %> </p>
-    <p>Age : <%= callbook.age %> </p>
-    <div class="">
-      <form class="" action="/ejsFile/show/<%= callbook._id %>/?_method=delete" method="post">
-        <a href="/ejsFile/update/<%= callbook._id %>">Update</a> <input type="submit" name="destroy" value="delete">
-      </form>
-
+    <div class="main">
+      <h1>Show Page</h1>
+      <a href="/" class="goindex">go index </a>
+      <h3>Name : <%= callbook.name %> </h3>
+      <p>Phone number : <%= callbook.call %> </p>
+      <p>Address : <%= callbook.address %> </p>
+      <p>Age : <%= callbook.age %> </p>
+      <div class="bottom">
+        <form class="" action="/ejsFile/show/<%= callbook._id %>/?_method=delete" method="post">
+          <a href="/ejsFile/update/<%= callbook._id %>">Update</a> <input type="submit" name="destroy" value="delete">
+        </form>
+      </div>
     </div>
   </body>
 </html>

@@ -32,9 +32,9 @@ var callbookSchema = mongoose.Schema({            // Skchema setting
 var Callbook = mongoose.model('callbook',callbookSchema);   // Callbook model Create
 // index page
 app.get('/',function(req,res){
-  Callbook.find({},function(err,callbooks){
+  Callbook.find({},function(err,callbook){
     if(err) return res.json(err);
-    res.render('ejsFile',{callbooks:callbooks});
+    res.render('ejsFile',{callbook:callbook});
   });
 });
 // show page
@@ -50,7 +50,7 @@ app.get('/ejsFile/create',function(req,res){
 });
 // create
 app.post('/create',function(req,res){
-  Callbook.create(req.body,function(err,callbooks){
+  Callbook.create(req.body,function(err,callbook){
     if(err) return res.json(err);
     res.redirect('/');
   });

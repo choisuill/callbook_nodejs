@@ -1,0 +1,12 @@
+<div class="left_side">
+    <h1 class="left_side_title">Phone Book</h1>
+      <ul class="left_side_list">
+        <% callbook.forEach(function(callbook) { %>
+          <li>
+            <a href="/ejsFile/show/<%= callbook._id %> ">
+               <%= callbook.name %> </a>
+          </li>
+      <%  }) %>
+      </ul>
+      <p class="left_side_create"><a href="/ejsFile/create">Add Phone Book <span>&#43;</span></a></p>
+    </div>
