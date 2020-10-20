@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Update Page</title>
+  </head>
+  <body>
+    <h1>Update Page</h1>
+    <form class="" action="/ejsFile/update/<%= callbook._id %>/?_method=put" method="post">
+      <label for="name">Name</label> <br>
+      <input type="text" name="name" placeholder="<%= callbook.name %>"> <br>
+      <label for="call">Phone Number</label> <br>
+      <input type="text" name="call" placeholder="<%= callbook.call %>"> <br>
+      <label for="address">Address</label> <br>
+      <input type="text" name="address" placeholder="<%= callbook.address %>"> <br>
+      <label for="age">Age</label> <br>
+      <input type="text" name="age" placeholder="<%= callbook.age %>">
+      <input type="submit" name="" value="Update">
+    </form>
+    <br>
+    <div class="">
+      <a href="/">Index Page</a>
+      <a href="/ejsFile/create">Create Page</a>
+    </div>
+  </body>
+</html>
